@@ -5,7 +5,7 @@ metadata:
 spec:
   consumer:
     bootstrapServers: >-
-      https://kafka-test-cluster-kafka-bootstrap-kafka-test.apps.jfall1.rhtesting.nl/
+      https://kafka-test-cluster-kafka-bootstrap-kafka-test.apps.jfall1.rhtesting.nl:443
     groupId: kafka-test-group-id
     tls:
       trustedCertificates:
@@ -13,7 +13,7 @@ spec:
           secretName: kafka-test-cluster-cluster-ca-cert
   producer:
     bootstrapServers: >-
-      https://kafka-test-cluster-kafka-bootstrap-kafka-test.apps.jfall2.rhtesting.nl/
+      https://kafka-test-cluster-kafka-bootstrap-kafka-test.apps.jfall2.rhtesting.nl:443
     tls:
       trustedCertificates:
         - certificate: ca.crt
