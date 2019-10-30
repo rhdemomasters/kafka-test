@@ -1,0 +1,23 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaMirrorMaker
+metadata:
+  name: kafka-test-mirror-maker
+spec:
+  consumer:
+    bootstrapServers: >-
+      https://kafka-test-cluster-kafka-bootstrap-kafka-test.apps.jfall2.rhtesting.nl/
+    groupId: kafka-test-group-id
+    tls:
+      trustedCertificates:
+        - certificate: ca.crt
+          secretName: kafka-test-cluster-cluster-ca-cert
+  producer:
+    bootstrapServers: >-
+      https://kafka-test-cluster-kafka-bootstrap-kafka-test.apps.jfall1.rhtesting.nl/
+    tls:
+      trustedCertificates:
+        - certificate: ca.crt
+          secretName: kafka-test-cluster-cluster-ca-cert
+  replicas: 3
+  version: 2.2.1
+  whitelist: .*
