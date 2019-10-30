@@ -19,12 +19,12 @@ spec:
       log.message.format.version: '2.2'
     storage:
       type: persistent-claim
-      size: 200M
+      size: 1Gi
   zookeeper:
     replicas: 3
     storage:
       type: persistent-claim
-      size: 200M
+      size: 1Gi
   entityOperator:
     topicOperator: {}
     userOperator: {}  
